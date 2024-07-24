@@ -124,7 +124,7 @@ function Result() {
           return lineCount;
         };
 
-        context.font = "600 65px Poppins, sans-serif";
+        context.font = "600 60px Poppins, sans-serif";
         context.fillStyle = "#111254";
         const lines = drawText(displayedResult[0].item, 160, 200, 500, 70);
 
@@ -134,42 +134,42 @@ function Result() {
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
-        context.fillText("1", 350, 500);
+        context.fillText("1", 350, 350);
 
-        context.font = "600 50px Poppins, sans-serif";
+        context.font = "600 40px Poppins, sans-serif";
         context.fillStyle = "black";
         const text = displayedResult[0].firstName.toUpperCase();
-        context.fillText(text, 440, 500);
+        context.fillText(text, 440, 350);
 
-        context.font = "400 28px Poppins, sans-serif";
+        context.font = "400 25px Poppins, sans-serif";
         context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].firstUnit, 440, 530);
+        context.fillText(displayedResult[0].firstUnit, 440, 380);
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
-        context.fillText("2", 350, 610);
+        context.fillText("2", 350, 450);
 
-        context.font = "600 50px Poppins, sans-serif";
+        context.font = "600 40px Poppins, sans-serif";
         context.fillStyle = "black";
         const text2 = displayedResult[0].secondName.toUpperCase();
-        context.fillText(text2, 440, 610);
+        context.fillText(text2, 440, 450);
 
-        context.font = "400 28px Poppins, sans-serif";
+        context.font = "400 25px Poppins, sans-serif";
         context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].secondUnit, 440, 640);
+        context.fillText(displayedResult[0].secondUnit, 440, 480);
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
-        context.fillText("3", 350, 720);
+        context.fillText("3", 350, 550);
 
-        context.font = "600 50px Poppins, sans-serif ";
+        context.font = "600 40px Poppins, sans-serif ";
         context.fillStyle = "black";
         const text3 = displayedResult[0].thirdName.toUpperCase();
-        context.fillText(text3, 440, 720);
+        context.fillText(text3, 440, 550);
 
-        context.font = "400 28px Poppins, sans-serif";
+        context.font = "400 25px Poppins, sans-serif";
         context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].thirdUnit, 440, 750);
+        context.fillText(displayedResult[0].thirdUnit, 440, 580);
       }
     }
   }, [displayedResult, items]);
