@@ -126,15 +126,15 @@ function Result() {
 
         context.font = "600 60px Poppins, sans-serif";
         context.fillStyle = "#111254";
-        const lines = drawText(displayedResult[0].item, 160, 200, 500, 70);
+        const lines = drawText(displayedResult[0].item, 130, 170, 500, 70);
 
         context.font = "400 40px Poppins, sans-serif";
         context.fillStyle = "black";
-        drawText(displayedResult[0].category, 160, 180 + lines * 70, 500, 45);
+        drawText(displayedResult[0].category, 130, 150 + lines * 70, 500, 45);
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
-        context.fillText("1", 350, 350);
+        context.fillText("1", 350, 360);
 
         context.font = "600 40px Poppins, sans-serif";
         context.fillStyle = "black";
@@ -147,7 +147,7 @@ function Result() {
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
-        context.fillText("2", 350, 450);
+        context.fillText("2", 350, 460);
 
         context.font = "600 40px Poppins, sans-serif";
         context.fillStyle = "black";
@@ -160,7 +160,7 @@ function Result() {
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
-        context.fillText("3", 350, 550);
+        context.fillText("3", 350, 560);
 
         context.font = "600 40px Poppins, sans-serif ";
         context.fillStyle = "black";
