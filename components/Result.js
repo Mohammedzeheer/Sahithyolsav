@@ -139,11 +139,11 @@ function Result() {
         context.font = "600 40px Poppins, sans-serif";
         context.fillStyle = "black";
         const text = displayedResult[0].firstName.toUpperCase();
-        context.fillText(text, 440, 350);
+        context.fillText(text, 400, 350);
 
         context.font = "400 25px Poppins, sans-serif";
         context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].firstUnit, 440, 380);
+        context.fillText(displayedResult[0].firstUnit, 400, 380);
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
@@ -152,11 +152,11 @@ function Result() {
         context.font = "600 40px Poppins, sans-serif";
         context.fillStyle = "black";
         const text2 = displayedResult[0].secondName.toUpperCase();
-        context.fillText(text2, 440, 450);
+        context.fillText(text2, 400, 450);
 
         context.font = "400 25px Poppins, sans-serif";
         context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].secondUnit, 440, 480);
+        context.fillText(displayedResult[0].secondUnit, 400, 480);
 
         context.font = "400 45px Poppins, sans-serif";
         context.fillStyle = "black";
@@ -165,11 +165,11 @@ function Result() {
         context.font = "600 40px Poppins, sans-serif ";
         context.fillStyle = "black";
         const text3 = displayedResult[0].thirdName.toUpperCase();
-        context.fillText(text3, 440, 550);
+        context.fillText(text3, 400, 550);
 
         context.font = "400 25px Poppins, sans-serif";
         context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].thirdUnit, 440, 580);
+        context.fillText(displayedResult[0].thirdUnit, 400, 580);
       }
     }
   }, [displayedResult, items]);
