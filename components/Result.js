@@ -1,8 +1,7 @@
 'use client'
-import React from 'react'
+import React, { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import temp from "@/public/assets/temp2.jpg";
-import { useRef, useEffect, useState } from "react";
 import axios from "axios";
 
 function Result() {
