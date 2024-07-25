@@ -92,6 +92,11 @@ function Result() {
     }
   }, [imageLoaded, displayedResult,]);
 
+  const getResponsiveFontSize = (baseSize, canvasWidth) => {
+    const scaleFactor = canvasWidth / 1000; // Assuming 1000px as a base width
+    return Math.max(baseSize * scaleFactor, baseSize * 0.75); // Ensure minimum size
+  };
+
   useEffect(() => {
     if (imageLoaded && canvas && image && displayedResult.length > 0) {
       const context = canvas.getContext("2d");
@@ -124,52 +129,42 @@ function Result() {
           return lineCount;
         };
 
-        context.font = "600 60px Poppins, sans-serif";
+        // Update font sizes
+        const titleFontSize = getResponsiveFontSize(50, canvas.width);
+        const subtitleFontSize = getResponsiveFontSize(40, canvas.width);
+        const rankFontSize = getResponsiveFontSize(45, canvas.width);
+        const nameFontSize = getResponsiveFontSize(40, canvas.width);
+        const unitFontSize = getResponsiveFontSize(25, canvas.width);
+
+        // Title
+        context.font = `600 ${titleFontSize}px Poppins, sans-serif`;
         context.fillStyle = "#111254";
-        const lines = drawText(displayedResult[0].item, 130, 170, 500, 70);
+        const lines = drawText(displayedResult[0].item, 130, 230, canvas.width - 260, titleFontSize * 1.2);
 
-        context.font = "400 40px Poppins, sans-serif";
+        // Category
+        context.font = `400 ${subtitleFontSize}px Poppins, sans-serif`;
         context.fillStyle = "black";
-        drawText(displayedResult[0].category, 130, 150 + lines * 70, 500, 45);
+        drawText(displayedResult[0].category, 130, 195 + lines * (titleFontSize * 1.2), canvas.width - 260, subtitleFontSize * 1.2);
 
-        context.font = "400 45px Poppins, sans-serif";
-        context.fillStyle = "black";
-        context.fillText("1", 350, 360);
+        // Rankings
+        const drawRanking = (rank, name, unit, yPosition) => {
+          context.font = `400 ${rankFontSize}px Poppins, sans-serif`;
+          context.fillStyle = "black";
+          context.fillText(rank, 350, yPosition);
 
-        context.font = "600 40px Poppins, sans-serif";
-        context.fillStyle = "black";
-        const text = displayedResult[0].firstName.toUpperCase();
-        context.fillText(text, 400, 350);
+          context.font = `600 ${nameFontSize}px Poppins, sans-serif`;
+          context.fillStyle = "#220a82";
+          context.fillText(name.toUpperCase(), 450, yPosition - 15);
 
-        context.font = "400 25px Poppins, sans-serif";
-        context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].firstUnit, 400, 380);
+          context.font = `400 ${unitFontSize}px Poppins, sans-serif`;
+          context.fillStyle = "#154c79";
+          context.fillText(unit, 450, yPosition + 30);
+        };
 
-        context.font = "400 45px Poppins, sans-serif";
-        context.fillStyle = "black";
-        context.fillText("2", 350, 460);
-
-        context.font = "600 40px Poppins, sans-serif";
-        context.fillStyle = "black";
-        const text2 = displayedResult[0].secondName.toUpperCase();
-        context.fillText(text2, 400, 450);
-
-        context.font = "400 25px Poppins, sans-serif";
-        context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].secondUnit, 400, 480);
-
-        context.font = "400 45px Poppins, sans-serif";
-        context.fillStyle = "black";
-        context.fillText("3", 350, 560);
-
-        context.font = "600 40px Poppins, sans-serif ";
-        context.fillStyle = "black";
-        const text3 = displayedResult[0].thirdName.toUpperCase();
-        context.fillText(text3, 400, 550);
-
-        context.font = "400 25px Poppins, sans-serif";
-        context.fillStyle = "#154c79";
-        context.fillText(displayedResult[0].thirdUnit, 400, 580);
+        // Draw rankings
+        drawRanking("1  ", displayedResult[0].firstName, displayedResult[0].firstUnit, 580);
+        drawRanking("2  ", displayedResult[0].secondName, displayedResult[0].secondUnit, 730);
+        drawRanking("3  ", displayedResult[0].thirdName, displayedResult[0].thirdUnit, 870);
       }
     }
   }, [displayedResult, items]);
