@@ -131,7 +131,7 @@ function Result() {
 
         // Update font sizes
         const titleFontSize = getResponsiveFontSize(50, canvas.width);
-        const subtitleFontSize = getResponsiveFontSize(40, canvas.width);
+        const subtitleFontSize = getResponsiveFontSize(35, canvas.width);
         const rankFontSize = getResponsiveFontSize(45, canvas.width);
         const nameFontSize = getResponsiveFontSize(40, canvas.width);
         const unitFontSize = getResponsiveFontSize(25, canvas.width);
