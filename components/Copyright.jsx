@@ -10,7 +10,7 @@ function Copyright() {
         <h1 className='text-[8pt] leading-3'> 2024, made with by SSF Manjeshwar</h1>
       </div>
       <div className='-space-y-1'>
-        <h1 className='text-[8pt]'>Developed & Designed</h1>
+        <h1 className='text-[8pt]'>Design and Developed by</h1>
         <div className='flex gap-1 text-blue-900 text-[8pt] font-medium'>
           <Link href={'https://www.trizo.in/'}>Thasneem</Link>
           <h1>,</h1>
